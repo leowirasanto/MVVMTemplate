@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -31,6 +31,9 @@
 		B325D06E2427B0AC00EE3A94 /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B325D06C2427B0AC00EE3A94 /* HomeTableViewCell.xib */; };
 		B325D0702427B1FA00EE3A94 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = B325D06F2427B1FA00EE3A94 /* Country.swift */; };
 		B325D0762427B37100EE3A94 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B325D0752427B37100EE3A94 /* HomeViewModel.swift */; };
+		B325D0782427BE7300EE3A94 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B325D0772427BE7300EE3A94 /* Endpoint.swift */; };
+		B325D07A2427C22700EE3A94 /* APISerivce.swift in Sources */ = {isa = PBXBuildFile; fileRef = B325D0792427C22700EE3A94 /* APISerivce.swift */; };
+		B325D07C2427C4A200EE3A94 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = B325D07B2427C4A200EE3A94 /* Constant.swift */; };
 		E987E29293908ACFFC5E9F22 /* Pods_MVVMTemplate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DEA9D02E24BDCBDEF20CC9A /* Pods_MVVMTemplate.framework */; };
 /* End PBXBuildFile section */
 
@@ -83,6 +86,9 @@
 		B325D06C2427B0AC00EE3A94 /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
 		B325D06F2427B1FA00EE3A94 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		B325D0752427B37100EE3A94 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		B325D0772427BE7300EE3A94 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		B325D0792427C22700EE3A94 /* APISerivce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APISerivce.swift; sourceTree = "<group>"; };
+		B325D07B2427C4A200EE3A94 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		BAF37DE7E9240F568FBC8AB8 /* Pods-MVVMTemplate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVMTemplate.release.xcconfig"; path = "Target Support Files/Pods-MVVMTemplate/Pods-MVVMTemplate.release.xcconfig"; sourceTree = "<group>"; };
 		EB73C5CBEC9CC82BB800E0B8 /* Pods-MVVMTemplate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVMTemplate.debug.xcconfig"; path = "Target Support Files/Pods-MVVMTemplate/Pods-MVVMTemplate.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -119,7 +125,6 @@
 				EB73C5CBEC9CC82BB800E0B8 /* Pods-MVVMTemplate.debug.xcconfig */,
 				BAF37DE7E9240F568FBC8AB8 /* Pods-MVVMTemplate.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -226,6 +231,7 @@
 		B325D0452427A17F00EE3A94 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				B325D0792427C22700EE3A94 /* APISerivce.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -268,6 +274,8 @@
 			isa = PBXGroup;
 			children = (
 				B325D0582427A2EC00EE3A94 /* Enum.swift */,
+				B325D0772427BE7300EE3A94 /* Endpoint.swift */,
+				B325D07B2427C4A200EE3A94 /* Constant.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -483,13 +491,16 @@
 				B325D0562427A29E00EE3A94 /* Extension+UIViewController.swift in Sources */,
 				B325D0652427A45500EE3A94 /* Images.swift in Sources */,
 				B325D04F2427A1F200EE3A94 /* ProfileViewController.swift in Sources */,
+				B325D07C2427C4A200EE3A94 /* Constant.swift in Sources */,
 				B325D05D2427A34400EE3A94 /* Extension+Object.swift in Sources */,
 				B325D0592427A2EC00EE3A94 /* Enum.swift in Sources */,
 				B325D0612427A39D00EE3A94 /* Extension+String.swift in Sources */,
 				B325D0492427A1AC00EE3A94 /* MainTabbarController.swift in Sources */,
+				B325D07A2427C22700EE3A94 /* APISerivce.swift in Sources */,
 				B325D0632427A3AD00EE3A94 /* Extension+Date.swift in Sources */,
 				B325D04D2427A1E700EE3A94 /* HomeViewController.swift in Sources */,
 				B325D0702427B1FA00EE3A94 /* Country.swift in Sources */,
+				B325D0782427BE7300EE3A94 /* Endpoint.swift in Sources */,
 				B325D05B2427A32900EE3A94 /* Extension+UITableView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -17,7 +17,13 @@ class HomeTableViewCell: UITableViewCell {
     
     var country: Country? {
         didSet {
-            countryName.text = country?.countryName
+            var provinceName: String
+            if country?.province ?? "" == "" {
+                provinceName = ""
+            } else {
+                provinceName = "(\(country?.province ?? ""))"
+            }
+            countryName.text = "\(country?.countryName ?? "") \(provinceName)"
             deathLbl.text = "\(country?.deaths ?? 0)"
             curedLbl.text = "\(country?.recovered ?? 0)"
             positiveLbl.text = "\(country?.confirmed ?? 0)"
