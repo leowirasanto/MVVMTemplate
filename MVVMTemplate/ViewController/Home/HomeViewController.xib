@@ -9,6 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="MVVMTemplate" customModuleProvider="target">
             <connections>
+                <outlet property="tableView" destination="QEE-vR-J5F" id="HfD-b2-X37"/>
                 <outlet property="view" destination="AOe-Hz-mC3" id="XrK-mR-hLu"/>
             </connections>
         </placeholder>
@@ -16,7 +17,19 @@
         <view contentMode="scaleToFill" id="AOe-Hz-mC3">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QEE-vR-J5F">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" red="0.90196078431372551" green="0.90196078431372551" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="QEE-vR-J5F" firstAttribute="leading" secondItem="HLh-hZ-zWe" secondAttribute="leading" id="Mya-W3-MGl"/>
+                <constraint firstItem="HLh-hZ-zWe" firstAttribute="bottom" secondItem="QEE-vR-J5F" secondAttribute="bottom" id="ciu-NV-aMZ"/>
+                <constraint firstItem="QEE-vR-J5F" firstAttribute="top" secondItem="HLh-hZ-zWe" secondAttribute="top" id="jFD-Mg-dUb"/>
+                <constraint firstItem="HLh-hZ-zWe" firstAttribute="trailing" secondItem="QEE-vR-J5F" secondAttribute="trailing" id="q4q-tG-Yv5"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="HLh-hZ-zWe"/>
             <point key="canvasLocation" x="130" y="163"/>
         </view>

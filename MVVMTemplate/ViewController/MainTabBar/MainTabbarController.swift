@@ -9,10 +9,16 @@
 import UIKit
 
 class MainTabbarController: UITabBarController {
-
+    private var home = HomeViewController()
+    private var profile = ProfileViewController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        home.tabBarItem = UITabBarItem(title: "Home", image: Images.TabBar.home, tag: 0)
+        profile.tabBarItem = UITabBarItem(title: "Profile", image: Images.TabBar.profile, tag: 1)
+        let childs = [home, profile].map {
+            UINavigationController(rootViewController: $0)
+        }
+        viewControllers = childs
     }
 }
