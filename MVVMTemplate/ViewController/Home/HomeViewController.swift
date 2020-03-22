@@ -18,6 +18,7 @@ class HomeViewController: UIViewController {
         setupView()
         prepareViewModelObserver()
         fetchCountryData()
+        
     }
 
     private func setupView() {

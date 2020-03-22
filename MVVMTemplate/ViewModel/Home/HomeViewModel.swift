@@ -14,25 +14,38 @@ protocol HomeViewModelProtocol {
 }
 
 class HomeViewModel: HomeViewModelProtocol {
+    let api = APIService.shared
     var countryDidChanges: ((Bool, Bool) -> Void)?
     var country: [Country]? {
         didSet {
-            self.countryDidChanges!(true, false)
+            countryDidChanges!(true, false)
         }
     }
 
     func fetchCountry() {
-        let dummyData: [Country] = [
-            Country(province: "Jakarta", countryName: "Indonesia", lastUpdate: "2020-03-21T21:13:30", confirmed: 304, deaths: 48, recovered: 29),
-            Country(province: "Wuhan", countryName: "China", lastUpdate: "2020-03-21T21:13:30", confirmed: 20000, deaths: 1048, recovered: 940),
-            Country(province: "Rome", countryName: "Italy", lastUpdate: "2020-03-21T21:13:30", confirmed: 1003, deaths: 508, recovered: 29)
-        ]
-
-        DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
-            self.country = dummyData
+        api.request(endpoint: .getCountry) { result in
+            switch result {
+            case .success(let json):
+                guard let error = json["error"].bool, error == false else {
+                    self.countryDidChanges!(false, true)
+                    return
+                }
+                if json["data"].exists() {
+                    if let countries = json["data"]["covid19Stats"].array {
+                        var tempCountries: [Country] = []
+                        countries.forEach { json in
+                            tempCountries.append(Country(data: json))
+                        }
+                        self.country = tempCountries
+                    }
+                } else {
+                    self.countryDidChanges!(false, true)
+                }
+                print("Get country Result : \(json)")
+            case .failure(let error):
+                print(error.localizedDescription)
+                self.countryDidChanges!(false, true)
+            }
         }
-
-        // if error just call
-        // countryDidChanges!(false, true)
     }
 }
