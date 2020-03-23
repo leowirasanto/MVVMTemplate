@@ -30,7 +30,7 @@ extension Endpoint {
     
     var httpMethod: HTTPMethod {
         switch self {
-        case .getCountry:
+        case .getCountry, .searchCountry:
             return .get
         default:
             return .post
