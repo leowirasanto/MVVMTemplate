@@ -15,6 +15,13 @@ extension UIView {
         self.layer.cornerRadius = corner
     }
     
+    func round(_ specificCorner: CACornerMask = [.layerMinXMinYCorner, .layerMaxXMinYCorner], _ radius: CGFloat = 10) {
+        self.layer.cornerRadius = radius
+        self.layer.maskedCorners = specificCorner
+        self.layer.masksToBounds = true
+        self.clipsToBounds = true
+    }
+    
     func dropShadow() {
         self.layer.backgroundColor = UIColor.clear.cgColor
         self.layer.shadowColor = UIColor.gray.cgColor

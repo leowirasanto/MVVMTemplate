@@ -34,7 +34,57 @@ struct Country {
             self.province = value
         }
         if let value = data["lastUpdate"].string {
-            self.lastUpdate = value 
+            self.lastUpdate = value
+        }
+    }
+}
+
+extension Array where Element == Country {
+    func sortByCountryNameAtoZ() -> [Country] {
+        return self.sorted { (a, b) -> Bool in
+            (a.countryName ?? "") < (b.countryName ?? "")
+        }
+    }
+
+    func sortByCountryNameZtoA() -> [Country] {
+        return self.sorted { (a, b) -> Bool in
+            (a.countryName ?? "") > (b.countryName ?? "")
+        }
+    }
+
+    func sortConfirmedHighestToLowest() -> [Country] {
+        return self.sorted { (a, b) -> Bool in
+            a.confirmed > b.confirmed
+        }
+    }
+
+    func sortConfirmedLowestToHighest() -> [Country] {
+        return self.sorted { (a, b) -> Bool in
+            a.confirmed < b.confirmed
+        }
+    }
+
+    func sortDeathHighestToLowest() -> [Country] {
+        return self.sorted { (a, b) -> Bool in
+            a.deaths > b.deaths
+        }
+    }
+    
+    func sortDeathLowestToHighest() -> [Country] {
+        return self.sorted { (a, b) -> Bool in
+            a.deaths < b.deaths
+        }
+    }
+    
+    func sortRecoveredHighestToLowest() -> [Country] {
+        return self.sorted { (a, b) -> Bool in
+            a.recovered > b.recovered
+        }
+    }
+    
+    func sortRecoveredLowestToHighest() -> [Country] {
+        return self.sorted { (a, b) -> Bool in
+            a.recovered < b.recovered
         }
     }
 }

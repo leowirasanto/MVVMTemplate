@@ -18,7 +18,6 @@ class HomeViewController: UIViewController {
         setupView()
         prepareViewModelObserver()
         fetchCountryData()
-        
     }
 
     private func setupView() {
@@ -28,16 +27,52 @@ class HomeViewController: UIViewController {
         tableView.register(cellType: HomeTableViewCell.self)
         tableView.delegate = self
         tableView.dataSource = self
+
+        // item bar
+        let sortBtn = UIBarButtonItem(image: Images.NavigationItem.sort, style: .done, target: self, action: #selector(handleSort(_:)))
+        let searchBtn = UIBarButtonItem(image: Images.NavigationItem.search, style: .done, target: self, action: #selector(handleSort(_:)))
+        navigationItem.rightBarButtonItems = [searchBtn, sortBtn]
     }
+
+    @objc func handleSort(_ sender: Any) { 
+
+        let sortVC = SortCasesViewController()
+        sortVC.handleSelectItem = { [weak self] option in
+            switch option {
+            case .countryAtoZ:
+                self?.vm.country = self?.vm.country?.sortByCountryNameAtoZ()
+            case .countryZtoA:
+                self?.vm.country = self?.vm.country?.sortByCountryNameZtoA()
+            case .deathHitoLow:
+                self?.vm.country = self?.vm.country?.sortDeathHighestToLowest()
+            case .deathLowtoHi:
+                self?.vm.country = self?.vm.country?.sortDeathLowestToHighest()
+            case .confirmedHitoLow:
+                self?.vm.country = self?.vm.country?.sortConfirmedHighestToLowest()
+            case .confirmedLowtoHi:
+                self?.vm.country = self?.vm.country?.sortConfirmedLowestToHighest()
+            case .recoveredHitoLow:
+                self?.vm.country = self?.vm.country?.sortRecoveredHighestToLowest()
+            case .recoveredLowtoHi:
+                self?.vm.country = self?.vm.country?.sortRecoveredLowestToHighest()
+            }
+        }
+        let bottomSheet = BottomSheetViewController()
+        bottomSheet.childView = sortVC
+        navigate(.present, bottomSheet)
+    }
+
+    @objc func handleSearch(_ sender: Any) {}
 }
 
 extension HomeViewController {
     func fetchCountryData() {
         vm.fetchCountry()
     }
-    
+
+    // function to observe homeviewmodel
     func prepareViewModelObserver() {
-        vm.countryDidChanges = { (finished, error) in
+        vm.countryDidChanges = { _, error in
             if !error {
                 self.tableView.reloadData()
             }

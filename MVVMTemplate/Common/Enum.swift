@@ -15,3 +15,16 @@ enum NavigateType {
     case present
 }
 
+struct Sort {
+    enum CovidCases: String {
+        case countryAtoZ = "Country A-Z"
+        case countryZtoA = "Country Z-A"
+        case deathHitoLow = "Death Highest-Lowest"
+        case deathLowtoHi = "Death Lowest-Highest"
+        case confirmedHitoLow = "Confirmed Highest-Lowest"
+        case confirmedLowtoHi = "Confirmed Lowest-Highest"
+        case recoveredHitoLow = "Recovered Highest-Lowest"
+        case recoveredLowtoHi = "Recovered Lowest-Highest"
+    }
+} 
+

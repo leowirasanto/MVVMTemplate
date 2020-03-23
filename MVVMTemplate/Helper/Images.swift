@@ -14,4 +14,9 @@ struct Images {
         static let home: UIImage? = UIImage(systemName: "house")
         static let profile: UIImage? = UIImage(systemName: "person")
     }
+    
+    struct NavigationItem {
+        static let search: UIImage? = UIImage(systemName: "magnifyingglass")
+        static let sort: UIImage? = UIImage(systemName: "list.bullet")
+    }
 }
