@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BottomSheetViewController" customModule="MVVMTemplate" customModuleProvider="target">
+            <connections>
+                <outlet property="barView" destination="Sgg-MT-cmC" id="fhT-XG-0dk"/>
+                <outlet property="bg" destination="R9b-f6-M1w" id="eKX-PN-RFE"/>
+                <outlet property="bottomConstraint" destination="sg5-Tz-wlL" id="jRD-Sg-7xe"/>
+                <outlet property="bottomSheetHeight" destination="1ZN-uC-cMQ" id="A5r-L3-C4U"/>
+                <outlet property="bottomSheetView" destination="lSw-rf-Sac" id="tON-I7-bWd"/>
+                <outlet property="containerView" destination="fH7-uk-bHQ" id="jVx-FD-OKH"/>
+                <outlet property="view" destination="pkB-wd-xfA" id="we9-He-xEF"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="pkB-wd-xfA">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R9b-f6-M1w" userLabel="BackgroundView">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lSw-rf-Sac" userLabel="BottomSheetView">
+                    <rect key="frame" x="0.0" y="596" width="414" height="300"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sgg-MT-cmC">
+                            <rect key="frame" x="182" y="16" width="50" height="7"/>
+                            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="50" id="CHb-5V-QlK"/>
+                                <constraint firstAttribute="width" secondItem="Sgg-MT-cmC" secondAttribute="height" multiplier="14:2" id="eaV-as-IZt"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fH7-uk-bHQ" userLabel="ContainerView">
+                            <rect key="frame" x="0.0" y="39" width="414" height="261"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="300" id="1ZN-uC-cMQ"/>
+                        <constraint firstAttribute="trailing" secondItem="fH7-uk-bHQ" secondAttribute="trailing" id="5At-AS-QgU"/>
+                        <constraint firstItem="Sgg-MT-cmC" firstAttribute="top" secondItem="lSw-rf-Sac" secondAttribute="top" constant="16" id="PJ6-cC-bNR"/>
+                        <constraint firstAttribute="bottom" secondItem="fH7-uk-bHQ" secondAttribute="bottom" id="kEO-50-Jcc"/>
+                        <constraint firstItem="Sgg-MT-cmC" firstAttribute="centerX" secondItem="lSw-rf-Sac" secondAttribute="centerX" id="oeR-lK-gzK"/>
+                        <constraint firstItem="fH7-uk-bHQ" firstAttribute="top" secondItem="Sgg-MT-cmC" secondAttribute="bottom" constant="16" id="pwL-J5-Qrn"/>
+                        <constraint firstItem="fH7-uk-bHQ" firstAttribute="leading" secondItem="lSw-rf-Sac" secondAttribute="leading" id="vrM-PL-RrZ"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="KEl-eu-Xqu" firstAttribute="trailing" secondItem="R9b-f6-M1w" secondAttribute="trailing" id="8NZ-uO-iX7"/>
+                <constraint firstItem="R9b-f6-M1w" firstAttribute="leading" secondItem="KEl-eu-Xqu" secondAttribute="leading" id="CQ5-Fq-vxg"/>
+                <constraint firstAttribute="bottom" secondItem="R9b-f6-M1w" secondAttribute="bottom" id="IGO-Lv-0Rs"/>
+                <constraint firstItem="lSw-rf-Sac" firstAttribute="leading" secondItem="KEl-eu-Xqu" secondAttribute="leading" id="Qcb-6L-nbq"/>
+                <constraint firstItem="KEl-eu-Xqu" firstAttribute="trailing" secondItem="lSw-rf-Sac" secondAttribute="trailing" id="e6t-6a-5OP"/>
+                <constraint firstItem="R9b-f6-M1w" firstAttribute="top" secondItem="pkB-wd-xfA" secondAttribute="top" id="rbf-cy-Fn8"/>
+                <constraint firstAttribute="bottom" secondItem="lSw-rf-Sac" secondAttribute="bottom" id="sg5-Tz-wlL"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="KEl-eu-Xqu"/>
+            <point key="canvasLocation" x="-20" y="224"/>
+        </view>
+    </objects>
+</document>
