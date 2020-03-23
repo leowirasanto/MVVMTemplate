@@ -62,18 +62,20 @@ class HomeViewController: UIViewController {
     }
 
     @objc func handleSearch(_ sender: Any) {
-        self.navigate(.pushWithHideBottomBar, HomeSearchViewController())
+        navigate(.pushWithHideBottomBar, HomeSearchViewController())
     }
 }
 
 extension HomeViewController {
     func fetchCountryData() {
+        showPopupAnimation(view.bounds.width, animationName: Constant.AnimationNames.virusAnimation)
         vm.fetchCountry()
     }
 
     // function to observe homeviewmodel
     func prepareViewModelObserver() {
         vm.countryDidChanges = { _, error in
+            self.hidePopupAnimation()
             if !error {
                 self.tableView.reloadData()
             }

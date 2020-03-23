@@ -65,6 +65,7 @@ class HomeSearchViewController: UIViewController {
 extension HomeSearchViewController {
     func prepareObserver() {
         vm.countryDidChanges = { _, error in
+            self.hidePopupAnimation()
             if !error {
                 self.tableView.reloadData()
             }
@@ -72,6 +73,7 @@ extension HomeSearchViewController {
     }
 
     func search(_ keyword: String) {
+        showPopupAnimation(view.bounds.width, animationName: Constant.AnimationNames.virusAnimation)
         vm.searchCountry(keyword)
     }
 }
