@@ -10,4 +10,9 @@ import Foundation
 
 struct Constant {
     static let baseUrl: String = "https://covid-19-coronavirus-statistics.p.rapidapi.com"
+    
+    struct AnimationNames {
+        static let virusAnimation = "virus-animation"
+        static let sickAnimation = "sick-animation"
+    }
 }

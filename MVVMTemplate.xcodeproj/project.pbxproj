@@ -43,6 +43,13 @@
 		B325D09224286E7200EE3A94 /* HomeSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B325D09124286E7200EE3A94 /* HomeSearchViewController.swift */; };
 		B325D09424286E8300EE3A94 /* HomeSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B325D09324286E8300EE3A94 /* HomeSearchViewController.xib */; };
 		B325D09824286FBB00EE3A94 /* HomeSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B325D09724286FBB00EE3A94 /* HomeSearchViewModel.swift */; };
+		B370DB292428886900E6A0CE /* virus-animation.json in Resources */ = {isa = PBXBuildFile; fileRef = B370DB282428886900E6A0CE /* virus-animation.json */; };
+		B370DB2E24288DC800E6A0CE /* CountryDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B370DB2C24288DC800E6A0CE /* CountryDetailTableViewCell.swift */; };
+		B370DB2F24288DC800E6A0CE /* CountryDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B370DB2D24288DC800E6A0CE /* CountryDetailTableViewCell.xib */; };
+		B370DB3124288EBC00E6A0CE /* sick-animation.json in Resources */ = {isa = PBXBuildFile; fileRef = B370DB3024288EBC00E6A0CE /* sick-animation.json */; };
+		B370DB332428953E00E6A0CE /* CountryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B370DB322428953E00E6A0CE /* CountryDetailViewController.swift */; };
+		B370DB352428954B00E6A0CE /* CountryDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B370DB342428954B00E6A0CE /* CountryDetailViewController.xib */; };
+		B370DB3824289E6900E6A0CE /* CountryDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B370DB3724289E6900E6A0CE /* CountryDetailViewModel.swift */; };
 		E987E29293908ACFFC5E9F22 /* Pods_MVVMTemplate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DEA9D02E24BDCBDEF20CC9A /* Pods_MVVMTemplate.framework */; };
 /* End PBXBuildFile section */
 
@@ -107,6 +114,13 @@
 		B325D09124286E7200EE3A94 /* HomeSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSearchViewController.swift; sourceTree = "<group>"; };
 		B325D09324286E8300EE3A94 /* HomeSearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeSearchViewController.xib; sourceTree = "<group>"; };
 		B325D09724286FBB00EE3A94 /* HomeSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSearchViewModel.swift; sourceTree = "<group>"; };
+		B370DB282428886900E6A0CE /* virus-animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "virus-animation.json"; sourceTree = "<group>"; };
+		B370DB2C24288DC800E6A0CE /* CountryDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetailTableViewCell.swift; sourceTree = "<group>"; };
+		B370DB2D24288DC800E6A0CE /* CountryDetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountryDetailTableViewCell.xib; sourceTree = "<group>"; };
+		B370DB3024288EBC00E6A0CE /* sick-animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "sick-animation.json"; sourceTree = "<group>"; };
+		B370DB322428953E00E6A0CE /* CountryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetailViewController.swift; sourceTree = "<group>"; };
+		B370DB342428954B00E6A0CE /* CountryDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountryDetailViewController.xib; sourceTree = "<group>"; };
+		B370DB3724289E6900E6A0CE /* CountryDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetailViewModel.swift; sourceTree = "<group>"; };
 		BAF37DE7E9240F568FBC8AB8 /* Pods-MVVMTemplate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVMTemplate.release.xcconfig"; path = "Target Support Files/Pods-MVVMTemplate/Pods-MVVMTemplate.release.xcconfig"; sourceTree = "<group>"; };
 		EB73C5CBEC9CC82BB800E0B8 /* Pods-MVVMTemplate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVMTemplate.debug.xcconfig"; path = "Target Support Files/Pods-MVVMTemplate/Pods-MVVMTemplate.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -259,6 +273,7 @@
 		B325D0462427A18700EE3A94 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				B370DB2B24288DAC00E6A0CE /* CountryDetail */,
 				B325D06A2427AFFB00EE3A94 /* Home */,
 			);
 			path = Cell;
@@ -293,6 +308,7 @@
 		B325D0572427A2E300EE3A94 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				B325D0992428836C00EE3A94 /* Lottie */,
 				B325D0582427A2EC00EE3A94 /* Enum.swift */,
 				B325D0772427BE7300EE3A94 /* Endpoint.swift */,
 				B325D07B2427C4A200EE3A94 /* Constant.swift */,
@@ -320,6 +336,7 @@
 		B325D07F2427D0A100EE3A94 /* General */ = {
 			isa = PBXGroup;
 			children = (
+				B370DB2A24288D9A00E6A0CE /* CountryDetail */,
 				B325D09024286E4700EE3A94 /* SearchView */,
 				B325D0812427D0AF00EE3A94 /* SortListView */,
 				B325D0802427D0A800EE3A94 /* BottomSheet */,
@@ -359,6 +376,7 @@
 		B325D09524286FA000EE3A94 /* General */ = {
 			isa = PBXGroup;
 			children = (
+				B370DB3624289E5A00E6A0CE /* CountryDetail */,
 				B325D09624286FA600EE3A94 /* SearchView */,
 			);
 			path = General;
@@ -370,6 +388,41 @@
 				B325D09724286FBB00EE3A94 /* HomeSearchViewModel.swift */,
 			);
 			path = SearchView;
+			sourceTree = "<group>";
+		};
+		B325D0992428836C00EE3A94 /* Lottie */ = {
+			isa = PBXGroup;
+			children = (
+				B370DB3024288EBC00E6A0CE /* sick-animation.json */,
+				B370DB282428886900E6A0CE /* virus-animation.json */,
+			);
+			path = Lottie;
+			sourceTree = "<group>";
+		};
+		B370DB2A24288D9A00E6A0CE /* CountryDetail */ = {
+			isa = PBXGroup;
+			children = (
+				B370DB322428953E00E6A0CE /* CountryDetailViewController.swift */,
+				B370DB342428954B00E6A0CE /* CountryDetailViewController.xib */,
+			);
+			path = CountryDetail;
+			sourceTree = "<group>";
+		};
+		B370DB2B24288DAC00E6A0CE /* CountryDetail */ = {
+			isa = PBXGroup;
+			children = (
+				B370DB2C24288DC800E6A0CE /* CountryDetailTableViewCell.swift */,
+				B370DB2D24288DC800E6A0CE /* CountryDetailTableViewCell.xib */,
+			);
+			path = CountryDetail;
+			sourceTree = "<group>";
+		};
+		B370DB3624289E5A00E6A0CE /* CountryDetail */ = {
+			isa = PBXGroup;
+			children = (
+				B370DB3724289E6900E6A0CE /* CountryDetailViewModel.swift */,
+			);
+			path = CountryDetail;
 			sourceTree = "<group>";
 		};
 		CAD7D965A0B7E2E0DDE13CD6 /* Frameworks */ = {
@@ -489,10 +542,14 @@
 				B325D01D2427A0EF00EE3A94 /* LaunchScreen.storyboard in Resources */,
 				B325D09424286E8300EE3A94 /* HomeSearchViewController.xib in Resources */,
 				B325D0852427D14E00EE3A94 /* BottomSheetViewController.xib in Resources */,
+				B370DB3124288EBC00E6A0CE /* sick-animation.json in Resources */,
 				B325D08A2427DC4F00EE3A94 /* SortCasesViewController.xib in Resources */,
 				B325D01A2427A0EF00EE3A94 /* Assets.xcassets in Resources */,
+				B370DB2F24288DC800E6A0CE /* CountryDetailTableViewCell.xib in Resources */,
 				B325D0182427A0ED00EE3A94 /* Main.storyboard in Resources */,
 				B325D0542427A27300EE3A94 /* ProfileViewController.xib in Resources */,
+				B370DB292428886900E6A0CE /* virus-animation.json in Resources */,
+				B370DB352428954B00E6A0CE /* CountryDetailViewController.xib in Resources */,
 				B325D06E2427B0AC00EE3A94 /* HomeTableViewCell.xib in Resources */,
 				B325D08E2427DF2600EE3A94 /* SortCasesTableViewCell.xib in Resources */,
 				B325D0512427A20600EE3A94 /* HomeViewController.xib in Resources */,
@@ -570,6 +627,7 @@
 				B325D0762427B37100EE3A94 /* HomeViewModel.swift in Sources */,
 				B325D05F2427A35700EE3A94 /* Extension+UIView.swift in Sources */,
 				B325D0562427A29E00EE3A94 /* Extension+UIViewController.swift in Sources */,
+				B370DB332428953E00E6A0CE /* CountryDetailViewController.swift in Sources */,
 				B325D0652427A45500EE3A94 /* Images.swift in Sources */,
 				B325D04F2427A1F200EE3A94 /* ProfileViewController.swift in Sources */,
 				B325D07C2427C4A200EE3A94 /* Constant.swift in Sources */,
@@ -581,11 +639,13 @@
 				B325D0612427A39D00EE3A94 /* Extension+String.swift in Sources */,
 				B325D0492427A1AC00EE3A94 /* MainTabbarController.swift in Sources */,
 				B325D07A2427C22700EE3A94 /* APISerivce.swift in Sources */,
+				B370DB2E24288DC800E6A0CE /* CountryDetailTableViewCell.swift in Sources */,
 				B325D0632427A3AD00EE3A94 /* Extension+Date.swift in Sources */,
 				B325D04D2427A1E700EE3A94 /* HomeViewController.swift in Sources */,
 				B325D0702427B1FA00EE3A94 /* Country.swift in Sources */,
 				B325D0782427BE7300EE3A94 /* Endpoint.swift in Sources */,
 				B325D05B2427A32900EE3A94 /* Extension+UITableView.swift in Sources */,
+				B370DB3824289E6900E6A0CE /* CountryDetailViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

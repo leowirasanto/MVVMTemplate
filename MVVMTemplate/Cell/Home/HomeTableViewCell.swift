@@ -10,10 +10,10 @@ import UIKit
 
 class HomeTableViewCell: UITableViewCell {
     @IBOutlet weak var countryName: UILabel!
-    
     @IBOutlet weak var curedLbl: UILabel!
     @IBOutlet weak var deathLbl: UILabel!
     @IBOutlet weak var positiveLbl: UILabel!
+    var handleSelect: (() -> Void)?
     
     var country: Country? {
         didSet {
@@ -33,12 +33,17 @@ class HomeTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.selectionStyle = .none
+        
+        self.isUserInteractionEnabled = true
+        self.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleSelect_)))
+    }
+    
+    @objc func handleSelect_() {
+        handleSelect?()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
 }

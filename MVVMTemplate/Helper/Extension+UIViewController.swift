@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Lottie
 import UIKit
 
 extension UIViewController {
@@ -64,4 +65,48 @@ protocol BottomSheetDelegate: class {
     var panelHeight: CGFloat { get set }
     var tapToDismiss: Bool { get set }
     var cornerRadius: CGFloat { get set }
+}
+
+// handle show popup
+extension UIViewController {
+    func showPopupAnimation(_ width: CGFloat = 150, _ height: CGFloat = 150, animationName: String = Constant.AnimationNames.virusAnimation) {
+        let animationContainer = UIView(frame: CGRect(origin: .zero, size: CGSize(width: width, height: height)))
+        let animationView = AnimationView()
+        animationContainer.tag = 111
+        animationContainer.round()
+        animationContainer.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(animationContainer)
+        self.view.bringSubviewToFront(animationContainer)
+
+        NSLayoutConstraint.activate([
+            animationContainer.widthAnchor.constraint(equalToConstant: width),
+            animationContainer.heightAnchor.constraint(equalToConstant: height),
+            animationContainer.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
+            animationContainer.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+        ])
+
+        animationView.animation = Animation.named(animationName)
+        animationView.contentMode = .scaleAspectFit
+        animationView.clipsToBounds = true
+        animationView.loopMode = .loop
+
+        animationContainer.addSubview(animationView)
+        animationView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            animationView.topAnchor.constraint(equalTo: animationContainer.topAnchor),
+            animationView.bottomAnchor.constraint(equalTo: animationContainer.bottomAnchor),
+            animationView.leftAnchor.constraint(equalTo: animationContainer.leftAnchor),
+            animationView.rightAnchor.constraint(equalTo: animationContainer.rightAnchor),
+        ])
+
+        animationView.play()
+    }
+    
+    func hidePopupAnimation() {
+        self.view.subviews.forEach { (view) in
+            if view.tag == 111 {
+                view.removeFromSuperview()
+            }
+        }
+    }
 }

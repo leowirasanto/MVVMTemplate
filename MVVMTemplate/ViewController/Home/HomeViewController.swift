@@ -62,18 +62,20 @@ class HomeViewController: UIViewController {
     }
 
     @objc func handleSearch(_ sender: Any) {
-        self.navigate(.pushWithHideBottomBar, HomeSearchViewController())
+        navigate(.pushWithHideBottomBar, HomeSearchViewController())
     }
 }
 
 extension HomeViewController {
     func fetchCountryData() {
+        showPopupAnimation(view.bounds.width, animationName: Constant.AnimationNames.virusAnimation)
         vm.fetchCountry()
     }
 
     // function to observe homeviewmodel
     func prepareViewModelObserver() {
         vm.countryDidChanges = { _, error in
+            self.hidePopupAnimation()
             if !error {
                 self.tableView.reloadData()
             }
@@ -89,12 +91,17 @@ extension HomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusable(HomeTableViewCell.self, indexPath)
         cell.country = vm.country?[indexPath.row]
+        cell.handleSelect = { [weak self] in
+            guard let countries = self?.vm.country?[indexPath.row] else { return }
+            let detail = CountryDetailViewController()
+            detail.vm.selectedCountry = countries
+            detail.vm.country = self?.vm.country
+            self?.navigate(.pushWithHideBottomBar, detail)
+        }
         return cell
     }
 }
 
 extension HomeViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("selected at \(indexPath.row)")
-    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {}
 }

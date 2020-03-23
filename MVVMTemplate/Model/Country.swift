@@ -40,6 +40,20 @@ struct Country {
 }
 
 extension Array where Element == Country {
+    func relatedCountry(country: Country) -> [Country] {
+        var related = self.filter { (country) -> Bool in
+            country.countryName == country.countryName
+        }
+        var containedIndex = 0
+        for (i, c) in related.enumerated() {
+            if c.countryName == country.countryName, c.province == country.province {
+                containedIndex = i
+            }
+        }
+        related.remove(at: containedIndex)
+        return related
+    }
+
     func sortByCountryNameAtoZ() -> [Country] {
         return self.sorted { (a, b) -> Bool in
             (a.countryName ?? "") < (b.countryName ?? "")
@@ -69,19 +83,19 @@ extension Array where Element == Country {
             a.deaths > b.deaths
         }
     }
-    
+
     func sortDeathLowestToHighest() -> [Country] {
         return self.sorted { (a, b) -> Bool in
             a.deaths < b.deaths
         }
     }
-    
+
     func sortRecoveredHighestToLowest() -> [Country] {
         return self.sorted { (a, b) -> Bool in
             a.recovered > b.recovered
         }
     }
-    
+
     func sortRecoveredLowestToHighest() -> [Country] {
         return self.sorted { (a, b) -> Bool in
             a.recovered < b.recovered
