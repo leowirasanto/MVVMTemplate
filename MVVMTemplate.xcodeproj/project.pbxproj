@@ -49,6 +49,7 @@
 		B370DB3124288EBC00E6A0CE /* sick-animation.json in Resources */ = {isa = PBXBuildFile; fileRef = B370DB3024288EBC00E6A0CE /* sick-animation.json */; };
 		B370DB332428953E00E6A0CE /* CountryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B370DB322428953E00E6A0CE /* CountryDetailViewController.swift */; };
 		B370DB352428954B00E6A0CE /* CountryDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B370DB342428954B00E6A0CE /* CountryDetailViewController.xib */; };
+		B370DB3824289E6900E6A0CE /* CountryDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B370DB3724289E6900E6A0CE /* CountryDetailViewModel.swift */; };
 		E987E29293908ACFFC5E9F22 /* Pods_MVVMTemplate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DEA9D02E24BDCBDEF20CC9A /* Pods_MVVMTemplate.framework */; };
 /* End PBXBuildFile section */
 
@@ -119,6 +120,7 @@
 		B370DB3024288EBC00E6A0CE /* sick-animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "sick-animation.json"; sourceTree = "<group>"; };
 		B370DB322428953E00E6A0CE /* CountryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetailViewController.swift; sourceTree = "<group>"; };
 		B370DB342428954B00E6A0CE /* CountryDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountryDetailViewController.xib; sourceTree = "<group>"; };
+		B370DB3724289E6900E6A0CE /* CountryDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetailViewModel.swift; sourceTree = "<group>"; };
 		BAF37DE7E9240F568FBC8AB8 /* Pods-MVVMTemplate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVMTemplate.release.xcconfig"; path = "Target Support Files/Pods-MVVMTemplate/Pods-MVVMTemplate.release.xcconfig"; sourceTree = "<group>"; };
 		EB73C5CBEC9CC82BB800E0B8 /* Pods-MVVMTemplate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVMTemplate.debug.xcconfig"; path = "Target Support Files/Pods-MVVMTemplate/Pods-MVVMTemplate.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -374,6 +376,7 @@
 		B325D09524286FA000EE3A94 /* General */ = {
 			isa = PBXGroup;
 			children = (
+				B370DB3624289E5A00E6A0CE /* CountryDetail */,
 				B325D09624286FA600EE3A94 /* SearchView */,
 			);
 			path = General;
@@ -410,6 +413,14 @@
 			children = (
 				B370DB2C24288DC800E6A0CE /* CountryDetailTableViewCell.swift */,
 				B370DB2D24288DC800E6A0CE /* CountryDetailTableViewCell.xib */,
+			);
+			path = CountryDetail;
+			sourceTree = "<group>";
+		};
+		B370DB3624289E5A00E6A0CE /* CountryDetail */ = {
+			isa = PBXGroup;
+			children = (
+				B370DB3724289E6900E6A0CE /* CountryDetailViewModel.swift */,
 			);
 			path = CountryDetail;
 			sourceTree = "<group>";
@@ -634,6 +645,7 @@
 				B325D0702427B1FA00EE3A94 /* Country.swift in Sources */,
 				B325D0782427BE7300EE3A94 /* Endpoint.swift in Sources */,
 				B325D05B2427A32900EE3A94 /* Extension+UITableView.swift in Sources */,
+				B370DB3824289E6900E6A0CE /* CountryDetailViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

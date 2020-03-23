@@ -86,6 +86,13 @@ extension HomeSearchViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusable(HomeTableViewCell.self, indexPath)
         cell.country = vm.country?[indexPath.row]
+        cell.handleSelect = { [weak self] in
+            guard let countries = self?.vm.country?[indexPath.row] else { return }
+            let detail = CountryDetailViewController()
+            detail.vm.selectedCountry = countries
+            detail.vm.country = self?.vm.country
+            self?.navigate(.pushWithHideBottomBar, detail)
+        }
         return cell
     }
 }

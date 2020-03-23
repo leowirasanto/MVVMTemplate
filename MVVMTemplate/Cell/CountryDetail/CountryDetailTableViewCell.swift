@@ -29,14 +29,14 @@ class CountryDetailTableViewCell: UITableViewCell {
             recovered.text = "\(country?.recovered ?? 0)"
             confirmed.text = "\(country?.confirmed ?? 0)"
             //format from 2020-03-23T06:02:35.247Z
-            lastupdate.text = "Last update : \(country?.lastUpdate?.formatStringDate(with: "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", to: "dd MMM yyyy, HH:mm") ?? "-")"
+            lastupdate.text = "Last update : \(country?.lastUpdate?.formatStringDate(with: "yyyy-MM-dd'T'HH:mm:ss", to: "dd MMM yyyy, HH:mm") ?? "-")"
         }
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
         self.selectionStyle = .none
-        animContainer.addLottieAnimation()
+        animContainer.addLottieAnimation(animationName: Constant.AnimationNames.sickAnimation)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
