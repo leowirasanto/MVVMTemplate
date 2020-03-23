@@ -40,6 +40,9 @@
 		B325D08A2427DC4F00EE3A94 /* SortCasesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B325D0892427DC4F00EE3A94 /* SortCasesViewController.xib */; };
 		B325D08D2427DF2600EE3A94 /* SortCasesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B325D08B2427DF2600EE3A94 /* SortCasesTableViewCell.swift */; };
 		B325D08E2427DF2600EE3A94 /* SortCasesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B325D08C2427DF2600EE3A94 /* SortCasesTableViewCell.xib */; };
+		B325D09224286E7200EE3A94 /* HomeSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B325D09124286E7200EE3A94 /* HomeSearchViewController.swift */; };
+		B325D09424286E8300EE3A94 /* HomeSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B325D09324286E8300EE3A94 /* HomeSearchViewController.xib */; };
+		B325D09824286FBB00EE3A94 /* HomeSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B325D09724286FBB00EE3A94 /* HomeSearchViewModel.swift */; };
 		E987E29293908ACFFC5E9F22 /* Pods_MVVMTemplate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DEA9D02E24BDCBDEF20CC9A /* Pods_MVVMTemplate.framework */; };
 /* End PBXBuildFile section */
 
@@ -101,6 +104,9 @@
 		B325D0892427DC4F00EE3A94 /* SortCasesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SortCasesViewController.xib; sourceTree = "<group>"; };
 		B325D08B2427DF2600EE3A94 /* SortCasesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortCasesTableViewCell.swift; sourceTree = "<group>"; };
 		B325D08C2427DF2600EE3A94 /* SortCasesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SortCasesTableViewCell.xib; sourceTree = "<group>"; };
+		B325D09124286E7200EE3A94 /* HomeSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSearchViewController.swift; sourceTree = "<group>"; };
+		B325D09324286E8300EE3A94 /* HomeSearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeSearchViewController.xib; sourceTree = "<group>"; };
+		B325D09724286FBB00EE3A94 /* HomeSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSearchViewModel.swift; sourceTree = "<group>"; };
 		BAF37DE7E9240F568FBC8AB8 /* Pods-MVVMTemplate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVMTemplate.release.xcconfig"; path = "Target Support Files/Pods-MVVMTemplate/Pods-MVVMTemplate.release.xcconfig"; sourceTree = "<group>"; };
 		EB73C5CBEC9CC82BB800E0B8 /* Pods-MVVMTemplate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVMTemplate.debug.xcconfig"; path = "Target Support Files/Pods-MVVMTemplate/Pods-MVVMTemplate.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -203,6 +209,7 @@
 		B325D0412427A14B00EE3A94 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				B325D09524286FA000EE3A94 /* General */,
 				B325D0742427B35B00EE3A94 /* Home */,
 			);
 			path = ViewModel;
@@ -313,6 +320,7 @@
 		B325D07F2427D0A100EE3A94 /* General */ = {
 			isa = PBXGroup;
 			children = (
+				B325D09024286E4700EE3A94 /* SearchView */,
 				B325D0812427D0AF00EE3A94 /* SortListView */,
 				B325D0802427D0A800EE3A94 /* BottomSheet */,
 			);
@@ -337,6 +345,31 @@
 				B325D08C2427DF2600EE3A94 /* SortCasesTableViewCell.xib */,
 			);
 			path = SortListView;
+			sourceTree = "<group>";
+		};
+		B325D09024286E4700EE3A94 /* SearchView */ = {
+			isa = PBXGroup;
+			children = (
+				B325D09124286E7200EE3A94 /* HomeSearchViewController.swift */,
+				B325D09324286E8300EE3A94 /* HomeSearchViewController.xib */,
+			);
+			path = SearchView;
+			sourceTree = "<group>";
+		};
+		B325D09524286FA000EE3A94 /* General */ = {
+			isa = PBXGroup;
+			children = (
+				B325D09624286FA600EE3A94 /* SearchView */,
+			);
+			path = General;
+			sourceTree = "<group>";
+		};
+		B325D09624286FA600EE3A94 /* SearchView */ = {
+			isa = PBXGroup;
+			children = (
+				B325D09724286FBB00EE3A94 /* HomeSearchViewModel.swift */,
+			);
+			path = SearchView;
 			sourceTree = "<group>";
 		};
 		CAD7D965A0B7E2E0DDE13CD6 /* Frameworks */ = {
@@ -454,6 +487,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B325D01D2427A0EF00EE3A94 /* LaunchScreen.storyboard in Resources */,
+				B325D09424286E8300EE3A94 /* HomeSearchViewController.xib in Resources */,
 				B325D0852427D14E00EE3A94 /* BottomSheetViewController.xib in Resources */,
 				B325D08A2427DC4F00EE3A94 /* SortCasesViewController.xib in Resources */,
 				B325D01A2427A0EF00EE3A94 /* Assets.xcassets in Resources */,
@@ -542,6 +576,8 @@
 				B325D08D2427DF2600EE3A94 /* SortCasesTableViewCell.swift in Sources */,
 				B325D05D2427A34400EE3A94 /* Extension+Object.swift in Sources */,
 				B325D0592427A2EC00EE3A94 /* Enum.swift in Sources */,
+				B325D09224286E7200EE3A94 /* HomeSearchViewController.swift in Sources */,
+				B325D09824286FBB00EE3A94 /* HomeSearchViewModel.swift in Sources */,
 				B325D0612427A39D00EE3A94 /* Extension+String.swift in Sources */,
 				B325D0492427A1AC00EE3A94 /* MainTabbarController.swift in Sources */,
 				B325D07A2427C22700EE3A94 /* APISerivce.swift in Sources */,

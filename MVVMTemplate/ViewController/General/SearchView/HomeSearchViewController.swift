@@ -1,37 +1,37 @@
 //
-//  HomeViewController.swift
+//  HomeSearchViewController.swift
 //  MVVMTemplate
 //
-//  Created by Leo Wirasanto on 22/03/20.
+//  Created by Leo Wirasanto on 23/03/20.
 //  Copyright © 2020 Leo Wirasanto. All rights reserved.
 //
 
 import UIKit
 
-class HomeViewController: UIViewController {
-    let vm = HomeViewModel()
+class HomeSearchViewController: UIViewController {
+    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
 
+    let vm = HomeSearchViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
-        setNavigation("Home")
-        setupView()
-        prepareViewModelObserver()
-        fetchCountryData()
+        setView()
+        prepareObserver()
     }
 
-    private func setupView() {
-        // tableview
+    private func setView() {
+        //tableView
+        tableView.contentInset = UIEdgeInsets(top: 16, left: 0, bottom: 16, right: 0)
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 111
         tableView.register(cellType: HomeTableViewCell.self)
         tableView.delegate = self
         tableView.dataSource = self
+        searchBar.delegate = self
 
         // item bar
         let sortBtn = UIBarButtonItem(image: Images.NavigationItem.sort, style: .done, target: self, action: #selector(handleSort(_:)))
-        let searchBtn = UIBarButtonItem(image: Images.NavigationItem.search, style: .done, target: self, action: #selector(handleSearch(_:)))
-        navigationItem.rightBarButtonItems = [searchBtn, sortBtn]
+        navigationItem.rightBarButtonItems = [sortBtn]
     }
 
     @objc func handleSort(_ sender: Any) {
@@ -60,28 +60,23 @@ class HomeViewController: UIViewController {
         bottomSheet.childView = sortVC
         navigate(.present, bottomSheet)
     }
-
-    @objc func handleSearch(_ sender: Any) {
-        self.navigate(.pushWithHideBottomBar, HomeSearchViewController())
-    }
 }
 
-extension HomeViewController {
-    func fetchCountryData() {
-        vm.fetchCountry()
-    }
-
-    // function to observe homeviewmodel
-    func prepareViewModelObserver() {
+extension HomeSearchViewController {
+    func prepareObserver() {
         vm.countryDidChanges = { _, error in
             if !error {
                 self.tableView.reloadData()
             }
         }
     }
+
+    func search(_ keyword: String) {
+        vm.searchCountry(keyword)
+    }
 }
 
-extension HomeViewController: UITableViewDataSource {
+extension HomeSearchViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return vm.country?.count ?? 0
     }
@@ -93,8 +88,11 @@ extension HomeViewController: UITableViewDataSource {
     }
 }
 
-extension HomeViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("selected at \(indexPath.row)")
+extension HomeSearchViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        if let keyword = searchBar.text {
+            search(keyword)
+        }
+        searchBar.endEditing(true)
     }
 }

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeSearchViewController" customModule="MVVMTemplate" customModuleProvider="target">
+            <connections>
+                <outlet property="searchBar" destination="zWk-NI-lZH" id="4eM-64-yV1"/>
+                <outlet property="tableView" destination="IZg-mV-AzZ" id="Vqe-st-ZaY"/>
+                <outlet property="view" destination="Glb-Be-Kyu" id="ADm-O2-WDf"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="Glb-Be-Kyu">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <searchBar contentMode="redraw" placeholder="Search by country" translatesAutoresizingMaskIntoConstraints="NO" id="zWk-NI-lZH">
+                    <rect key="frame" x="0.0" y="44" width="414" height="56"/>
+                    <color key="barTintColor" name="PrimaryColor"/>
+                    <textInputTraits key="textInputTraits"/>
+                </searchBar>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IZg-mV-AzZ">
+                    <rect key="frame" x="0.0" y="100" width="414" height="796"/>
+                    <color key="backgroundColor" red="0.90196078430000004" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="IZg-mV-AzZ" secondAttribute="bottom" id="7AG-Q0-bMY"/>
+                <constraint firstItem="G6y-it-cKw" firstAttribute="trailing" secondItem="zWk-NI-lZH" secondAttribute="trailing" id="9ZT-a5-an7"/>
+                <constraint firstItem="IZg-mV-AzZ" firstAttribute="top" secondItem="zWk-NI-lZH" secondAttribute="bottom" id="Ege-UH-PCQ"/>
+                <constraint firstItem="zWk-NI-lZH" firstAttribute="top" secondItem="G6y-it-cKw" secondAttribute="top" id="QT2-fl-WfF"/>
+                <constraint firstItem="zWk-NI-lZH" firstAttribute="leading" secondItem="G6y-it-cKw" secondAttribute="leading" id="c28-Ur-XZC"/>
+                <constraint firstItem="IZg-mV-AzZ" firstAttribute="leading" secondItem="G6y-it-cKw" secondAttribute="leading" id="d4K-QX-yk2"/>
+                <constraint firstItem="G6y-it-cKw" firstAttribute="trailing" secondItem="IZg-mV-AzZ" secondAttribute="trailing" id="g0p-AC-Uf4"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="G6y-it-cKw"/>
+            <point key="canvasLocation" x="152" y="94"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="PrimaryColor">
+            <color red="0.32400000095367432" green="0.10599999874830246" blue="0.57499998807907104" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
